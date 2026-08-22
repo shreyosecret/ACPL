@@ -109,6 +109,7 @@ for (tag in names(sets)){
 }
 
 out <- do.call(rbind, rows)
+if (is.null(out) || !nrow(out)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(out, file.path(RESULT_DIR,"tau_pairwise_ci.csv"), row.names=FALSE)
 cat("\n\n===================== SUMMARY =====================\n")
 print(out, row.names=FALSE)

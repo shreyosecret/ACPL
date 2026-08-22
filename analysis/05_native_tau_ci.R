@@ -111,7 +111,9 @@ for(tag in names(sets)){
 }
 
 t1<-do.call(rbind,rows); t2<-do.call(rbind,pw)
+if (is.null(t1) || !nrow(t1)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(t1, file.path(RESULT_DIR,"native_tau.csv"), row.names=FALSE)
+if (is.null(t2) || !nrow(t2)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(t2, file.path(RESULT_DIR,"native_tau_ci.csv"), row.names=FALSE)
 cat("\n\n============== tau_cyc, NATIVE vs EMBEDDED ==============\n")
 print(t1,row.names=FALSE)

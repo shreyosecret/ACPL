@@ -168,7 +168,9 @@ for (tag in names(sets)) {
 }
 
 sw <- do.call(rbind, sweep_rows); bl <- do.call(rbind, blind_rows)
+if (is.null(sw) || !nrow(sw)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(sw, file.path(RESULT_DIR, "directionality_sweep.csv"), row.names=FALSE)
+if (is.null(bl) || !nrow(bl)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(bl, file.path(RESULT_DIR, "order_blindness.csv"),      row.names=FALSE)
 
 cat("\n\n================= SUMMARY: directional component at each w =================\n")

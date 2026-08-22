@@ -179,6 +179,7 @@ for (P in seq(56, 76, by=2)) {
 }
 
 out <- do.call(rbind, rows)
+if (is.null(out) || !nrow(out)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(out, file.path(RESULT_DIR,"yeast_reference_free.csv"), row.names=FALSE)
 cat("\n===================== SUMMARY =====================\n")
 print(out, row.names=FALSE)

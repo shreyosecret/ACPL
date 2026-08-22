@@ -173,6 +173,7 @@ for (tag in names(sets)) {
 }
 
 out <- do.call(rbind, rows)
+if (is.null(out) || !nrow(out)) stop("No rows produced: the dataset cache is missing or every method failed. Refusing to write an empty table.")
 write.csv(out, file.path(RESULT_DIR,"cyclic_ordering.csv"), row.names=FALSE)
 cat("\n\n===================== SUMMARY =====================\n")
 print(out[,c("Dataset","Method","CyclicOrder","Concentration","p_C","tau_cyc","p_tau")],
