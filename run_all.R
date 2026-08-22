@@ -59,7 +59,10 @@ if (length(absent))
        "\nDo not treat any table in results/ as a result of this run.")
 
 # ---- run the analyses --------------------------------------------------------
-scripts <- sort(list.files("analysis", pattern = "^0[1-9]_.*\\.R$",
+# 09_multiplicity.R is deliberately NOT in this sweep. It re-runs the paired
+# bootstrap at 2000 replicates and takes hours. Run it on its own once the
+# tables below exist:  Rscript analysis/09_multiplicity.R
+scripts <- sort(list.files("analysis", pattern = "^0[1-8]_.*\\.R$",
                            full.names = TRUE))
 for (s in scripts) {
   message("\n========== ", s, " ==========")
