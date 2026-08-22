@@ -7,7 +7,7 @@
 #   Rscript examples/minimal_example.R
 # ==============================================================================
 
-source("R/acpl_engine.R")
+source("R/methods.R")
 library(igraph); library(ggplot2)
 
 # 1. Generate a noisy synthetic cell cycle
@@ -37,11 +37,19 @@ cat("  -> Raw arc length filter would admit",
     "edges (100% by mathematical necessity, not inference)\n")
 
 # 5. Score against ground truth
+#
+# Both orientations are reported. Taking the maximum of the two would let the
+# ground-truth labels choose the sign of the ordering, which inflates the score
+# and is the evaluation defect documented in the accompanying metrology paper.
+# The declared orientation is the one the method emits, without consulting the
+# labels.
 true_idx <- seq_len(N)
 forward_frac <- mean(true_idx[graph$edges[, "to"]] >
                      true_idx[graph$edges[, "from"]])
-cat(sprintf("ACPL structural accuracy: %.1f%%\n",
-            100 * max(forward_frac, 1 - forward_frac)))
+cat(sprintf("ACPL forward fraction (as emitted): %.1f%%\n", 100 * forward_frac))
+cat(sprintf("  reversed reading would give:      %.1f%%\n", 100 * (1 - forward_frac)))
+cat("  NOTE: do not report the larger of the two. Fixing the orientation from\n",
+    "       the labels is label leakage, not accuracy.\n", sep = "")
 
 # 6. Visualise
 df_pts <- data.frame(x = x, y = y, idx = true_idx)
@@ -58,9 +66,8 @@ p <- ggplot() +
   coord_fixed() +
   theme_minimal() +
   labs(title = "ACPL on a noisy synthetic cycle",
-       subtitle = sprintf("SA = %.1f%%, %d directed edges",
-                          100 * max(forward_frac, 1 - forward_frac),
-                          nrow(graph$edges)))
+       subtitle = sprintf("forward fraction = %.1f%%, %d directed edges",
+                          100 * forward_frac, nrow(graph$edges)))
 
 if (!dir.exists("figures")) dir.create("figures")
 ggsave("figures/minimal_example.png", p, width = 6, height = 5, dpi = 150)
