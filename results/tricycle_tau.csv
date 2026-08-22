@@ -1,0 +1,7 @@
+"Dataset","Method","n","tau_cyc"
+"Nestorowa HSC","ACPL",1920,0.4499
+"Nestorowa HSC","tricycle",1920,0.6773
+"Buettner mESC","ACPL",288,0.4311
+"Buettner mESC","tricycle",288,0.5256
+"Richard T cells","ACPL",572,0.1704
+"Richard T cells","tricycle",572,0.1784

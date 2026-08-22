@@ -1,0 +1,4 @@
+"Dataset","n","Diff","CI_lo","CI_hi","Crosses_zero"
+"Nestorowa HSC",1920,-0.2275,-0.2577,-0.1892,FALSE
+"Buettner mESC",288,-0.0945,-0.1892,-0.0241,FALSE
+"Richard T cells",572,-0.008,-0.0945,0.0629,TRUE

@@ -1,0 +1,21 @@
+"Dataset","Config","n","tau_cyc"
+"Nestorowa HSC","ACPL (UMAP)",1920,0.4499
+"Nestorowa HSC","MST (UMAP)",1920,0.3548
+"Nestorowa HSC","MST (PCA native)",1920,0.2473
+"Nestorowa HSC","Sling (UMAP)",1920,0.3452
+"Nestorowa HSC","Sling (PCA native)",1920,0.4096
+"Buettner mESC","ACPL (UMAP)",288,0.4311
+"Buettner mESC","MST (UMAP)",288,0.4638
+"Buettner mESC","MST (PCA native)",288,0.1618
+"Buettner mESC","Sling (UMAP)",288,0.4878
+"Buettner mESC","Sling (PCA native)",288,0.394
+"Leng hESC","ACPL (UMAP)",247,0.7814
+"Leng hESC","MST (UMAP)",247,0.7605
+"Leng hESC","MST (PCA native)",247,0.4684
+"Leng hESC","Sling (UMAP)",247,0.7749
+"Leng hESC","Sling (PCA native)",247,0.6963
+"Richard T cells","ACPL (UMAP)",572,0.1704
+"Richard T cells","MST (UMAP)",572,0.1442
+"Richard T cells","MST (PCA native)",572,0.1041
+"Richard T cells","Sling (UMAP)",572,0.1387
+"Richard T cells","Sling (PCA native)",572,0.1046

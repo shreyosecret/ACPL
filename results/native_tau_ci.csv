@@ -1,0 +1,17 @@
+"Dataset","Comparison","n","Diff","CI_lo","CI_hi","Crosses_zero"
+"Nestorowa HSC","ACPL (UMAP) - MST (UMAP)",1920,0.0951,0.0698,0.1161,FALSE
+"Nestorowa HSC","ACPL (UMAP) - MST (PCA native)",1920,0.2026,0.1636,0.2307,FALSE
+"Nestorowa HSC","ACPL (UMAP) - Sling (UMAP)",1920,0.1047,0.0719,0.1262,FALSE
+"Nestorowa HSC","ACPL (UMAP) - Sling (PCA native)",1920,0.0402,0.0122,0.0682,FALSE
+"Buettner mESC","ACPL (UMAP) - MST (UMAP)",288,-0.0327,-0.0961,0.0385,TRUE
+"Buettner mESC","ACPL (UMAP) - MST (PCA native)",288,0.2693,0.1482,0.3448,FALSE
+"Buettner mESC","ACPL (UMAP) - Sling (UMAP)",288,-0.0567,-0.1244,0.0149,TRUE
+"Buettner mESC","ACPL (UMAP) - Sling (PCA native)",288,0.0371,-0.0409,0.1025,TRUE
+"Leng hESC","ACPL (UMAP) - MST (UMAP)",247,0.0209,-0.007,0.0461,TRUE
+"Leng hESC","ACPL (UMAP) - MST (PCA native)",247,0.313,0.201,0.4006,FALSE
+"Leng hESC","ACPL (UMAP) - Sling (UMAP)",247,0.0065,-5e-04,0.0172,TRUE
+"Leng hESC","ACPL (UMAP) - Sling (PCA native)",247,0.0851,0.0284,0.136,FALSE
+"Richard T cells","ACPL (UMAP) - MST (UMAP)",572,0.0262,-0.0204,0.0552,TRUE
+"Richard T cells","ACPL (UMAP) - MST (PCA native)",572,0.0663,-0.0032,0.1159,TRUE
+"Richard T cells","ACPL (UMAP) - Sling (UMAP)",572,0.0317,-0.0183,0.0754,TRUE
+"Richard T cells","ACPL (UMAP) - Sling (PCA native)",572,0.0658,-0.0263,0.1108,TRUE

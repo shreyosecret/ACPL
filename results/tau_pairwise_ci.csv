@@ -1,0 +1,13 @@
+"Dataset","Comparison","n","Diff","CI_lo","CI_hi","Crosses_zero"
+"Nestorowa HSC","ACPL - MST",1920,0.0766,0.0336,0.1138,FALSE
+"Nestorowa HSC","ACPL - Slingshot",1920,0.0862,0.0527,0.1249,FALSE
+"Nestorowa HSC","MST - Slingshot",1920,0.0096,-0.0261,0.0561,TRUE
+"Buettner mESC","ACPL - MST",288,-0.0668,-0.1233,0.012,TRUE
+"Buettner mESC","ACPL - Slingshot",288,-0.0795,-0.1311,0.0215,TRUE
+"Buettner mESC","MST - Slingshot",288,-0.0127,-0.07,0.0625,TRUE
+"Leng hESC","ACPL - MST",247,0.0209,-7e-04,0.0482,TRUE
+"Leng hESC","ACPL - Slingshot",247,0.0065,-6e-04,0.0156,TRUE
+"Leng hESC","MST - Slingshot",247,-0.0143,-0.0448,0.0099,TRUE
+"Richard T cells","ACPL - MST",572,0.0262,-0.0315,0.0491,TRUE
+"Richard T cells","ACPL - Slingshot",572,0.0317,-0.0284,0.0751,TRUE
+"Richard T cells","MST - Slingshot",572,0.0055,-0.0357,0.0663,TRUE

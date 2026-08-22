@@ -1,0 +1,5 @@
+"Dataset","Sling_PCA","MST_PCA","ACPL_mean","ACPL_sd","ACPL_min","ACPL_max","diff_Sling_mean","wins_vs_Sling","diff_MST_mean","wins_vs_MST","n_seeds"
+"Nestorowa HSC",0.4096,0.2473,0.4301,0.0092,0.4125,0.4424,0.0205,10,0.1828,10,10
+"Buettner mESC",0.394,0.1618,0.4516,0.0139,0.4258,0.475,0.0576,10,0.2898,10,10
+"Leng hESC",0.6963,0.4684,0.7721,0.0318,0.7033,0.7957,0.0758,10,0.3037,10,10
+"Richard T cells",0.1046,0.1041,0.1579,0.0076,0.1461,0.1738,0.0533,10,0.0538,10,10
