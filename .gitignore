@@ -49,6 +49,9 @@ po/*~
 rsconnect/
 
 # analysis outputs
+# cache/ holds large binary embeddings and is rebuilt by run_all.R.
+# results/ is NOT ignored: those eleven CSVs are the claims the papers make,
+# they total about 16 KB, and committing them lets a reader diff their own run
+# against the one the manuscripts were written from.
 /cache/
-/results/
 *.rds
