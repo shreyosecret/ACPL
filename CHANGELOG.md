@@ -1,5 +1,36 @@
 # Changelog
 
+## v2.1 — the repository could not actually run
+
+Three defects found by running `run_all.R` from a clean state for the first
+time. Every one of them was invisible while the analyses were being run by hand
+from a directory that already held the cache.
+
+**`cache_dataset()` was never called.** Every analysis script reads
+`cache/cache_<tag>.rds` and none of them can create it. `cache_dataset()` was
+defined in `R/loaders.R` and referenced nowhere. On a clean clone all four cache
+files were absent, every script printed `## missing` four times and skipped, and
+the repository produced nothing. `run_all.R` now builds the cache before running
+anything and aborts if a dataset cannot be built.
+
+**Failure was silent and exited zero.** With no cache, `do.call(rbind, list())`
+returns `NULL`, `write.csv(NULL, ...)` writes a four-byte file, and the run
+printed "All analyses complete." Seven of eight result tables were empty and
+nothing said so. Each script now refuses to write a table with no rows, and
+`run_all.R` fails if any table in `results/` comes out empty.
+
+**The reproducibility claim was untested.** The v2 manuscript states that
+`run_all.R` reproduces the analyses in order. Nobody had run it end to end. It
+did not. The statement was true of the intent and false of the code.
+
+Added `check_cache_reproducible.R`, which rebuilds the cache into
+`cache_check/` and compares it against the reference, because every published
+number is a function of an embedding that was built once and never rebuilt.
+
+Added `analysis/09_multiplicity.R`: Holm adjustment and Bonferroni simultaneous
+intervals over the sixteen comparisons in `native_tau_ci.csv`. The v2 manuscript
+concedes the multiplicity objection without pricing it; this prices it.
+
 ## v2 — corrections to the v1 release
 
 The v1 code and the results it produced contained errors. They are listed here
