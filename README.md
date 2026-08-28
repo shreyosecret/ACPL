@@ -66,6 +66,27 @@ downstream reads that cache and cannot create it. Running a single analysis
 script against an empty `cache/` used to produce an empty table and no error;
 it now stops.
 
+## Why tau_cyc differs between scripts
+
+`tau_cyc` is the maximum Kendall tau against ordinal phase rank taken over a
+grid of origin rotations and both traversal directions. Its value therefore
+depends on how fine that grid is, and the three scripts that compute it use
+different grids for different reasons:
+
+| script | `NROT` | why |
+|---|---|---|
+| `02_cyclic_ordering.R` | 36 | no bootstrap, so a fine grid is cheap |
+| `03_tau_pairwise_ci.R` | 12 | 500 paired resamples on a finer grid is not tractable |
+| `05_native_tau_ci.R` | 24 | **the values quoted in the manuscripts** |
+
+So ACPL on Nestorowa reads 0.4401 in script 02, 0.4314 in script 03 and 0.4499
+in script 05. These are the same ordering measured on three grids, not three
+different results. Quote script 05.
+
+Within a script the grid is identical for every method, so it shifts both arms
+of a comparison equally. Differences and confidence intervals are unaffected by
+the choice; only the per-method point estimates move.
+
 ## Two things worth knowing if you build on this
 
 **The chance level of tie-counting windowed concordance is not 50 percent.** It
