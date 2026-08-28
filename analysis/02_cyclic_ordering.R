@@ -38,6 +38,11 @@
 PROJ <- getwd()   # run from the repository root
 CACHE_DIR  <- file.path(PROJ, "cache")
 RESULT_DIR <- file.path(PROJ, "results")
+# ROTATION GRID. tau_cyc maximises over a grid of origin rotations, so its value
+# depends on how fine that grid is. This script uses 36. analysis/05_native_tau_ci.R
+# uses 24 and is the script the manuscripts quote, so the same ordering scores
+# slightly differently in the two tables. That is a property of the statistic,
+# not a discrepancy. See "Why tau_cyc differs between scripts" in the README.
 NROT  <- 36      # origin rotations
 NPERM <- 1000
 set.seed(2026)

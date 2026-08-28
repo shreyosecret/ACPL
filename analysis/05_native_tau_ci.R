@@ -17,6 +17,11 @@
 
 PROJ <- getwd()   # run from the repository root
 CACHE_DIR <- file.path(PROJ,"cache"); RESULT_DIR <- file.path(PROJ,"results")
+# ROTATION GRID. tau_cyc maximises over a grid of origin rotations, so its value
+# depends on how fine that grid is. NROT = 24 here, and THIS SCRIPT IS THE SOURCE
+# OF EVERY tau_cyc VALUE QUOTED IN THE MANUSCRIPTS. Script 02 uses 36 and script
+# 03 uses 12, so their per-method tau values differ slightly from these. See
+# "Why tau_cyc differs between scripts" in the README.
 NPC <- 10; NROT <- 24; NBOOT <- 400
 set.seed(2026)
 suppressPackageStartupMessages({library(Seurat); library(igraph)})

@@ -16,6 +16,13 @@
 
 PROJ <- getwd()   # run from the repository root
 CACHE_DIR <- file.path(PROJ,"cache"); RESULT_DIR <- file.path(PROJ,"results")
+# ROTATION GRID. 12 here, against the 24 used by analysis/05_native_tau_ci.R,
+# which is the script the manuscripts quote: 500 bootstrap resamples on a finer
+# grid is not tractable. The coarser grid shifts the point estimate slightly and
+# shifts both arms of every comparison identically, so the DIFFERENCES and
+# INTERVALS below are unaffected; only the per-method tau values move. Do not
+# quote the point estimates from this script.
+# See "Why tau_cyc differs between scripts" in the README.
 NROT <- 12; NBOOT <- 500
 set.seed(2026)
 suppressPackageStartupMessages({library(Seurat); library(igraph)})
